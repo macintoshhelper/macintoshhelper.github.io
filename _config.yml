@@ -30,4 +30,4 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-destination: ../macintoshhelper.github.io
+#destination: ../macintoshhelper.github.io
