@@ -57,12 +57,12 @@ table {
 }
 nav {
     a, p {
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: 14px;
     }
 }
 p, body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Droid Serif', sans-serif;
 }
 h1 {
     font-size: 36px;
@@ -83,6 +83,7 @@ h6 {
     font-size: 12px;
 }
 /* ----------------- end: GLOBAL CHANGES ---------------- */
+.text-center {text-align: center;}
 
 .container {
     margin: 0 auto;
@@ -96,16 +97,19 @@ h6 {
         width: 80%;
     }*/
     @media (min-width: 1200px) {
-        width: 70%;
+        width: 80%;
     }
 }
 body > header {
-    height: 70px;
+    height: 100px;
+    background-color: white;
+    border-bottom: solid 1px #dcdcdc;
     .site-title {
         font-size: 18px;
-        padding: 20px;
+        font-weight: bold;
+        padding: 41px;
         position: absolute;
-        color: #337ab7;
+        color: #000;
         text-decoration: none;
     }
     nav {
@@ -124,10 +128,11 @@ body > header {
             float: left;
             a {
                 display: block;
-                padding: 25px 15px;
-                color: #000;
-                font-weight: 400;
+                padding: 41px 15px;
+                color: #313131;
                 text-decoration: none;
+                font-weight: 300;
+                font-size: 18px;
                 &:hover {
                     color: currentColor;
                     text-decoration: underline;
@@ -142,6 +147,29 @@ body > header {
             margin: 0 auto;
             float: none;
         }
+    }
+}
+.cover-header {
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.25) 100%), url(https://macintoshhelper.com/img/Coverv1.0.jpg) no-repeat scroll center center/cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    .container {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    li > a {
+        color: #fff;
+        font-weight: 300;
+        &:hover {
+            color: #fff;
+        }
+    }
+    .site-title {
+        color: #fff;
     }
 }
 #menu-icon {
@@ -185,20 +213,79 @@ body > header {
     border: 0;
 }
 body > main > section {
-    padding: 70px 15px;
+    padding: 70px 0px;
     h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
 }
 
-#section-header {
-    background: transparent url('https://macintoshhelper.com/img/Coverv1.0.jpg') no-repeat scroll center center/cover;
-    height: 50vh;
+.header-lead {
+    text-align: center;
+    h1 {
+        font-size: 64px;
+    }
     h3 {
         margin-top: 30px;
+        font-size: 28px;
     }
     h1, h3 {
         color: white;
     }
+    h1 strong {
+        border-bottom: solid 4px white;
+        display: inline-block;
+        padding-bottom: 15px;
+        margin-bottom: -15px;
+    }
 }
-.text-center {text-align: center;}
+
+
+main.cover-main {
+    padding-top: 50vh;
+}
+#section-header {
+    //background: transparent url('/assets/img/section-header-bg.jpg') no-repeat scroll center center/cover;
+    height: 50vh;
+    padding: 0px;
+    .header-grid {
+      width: 33.333333%;
+      height: 40vh;
+      float: left;
+      display: inline-block;
+      margin-top: 10vh;
+      position: relative;
+      h2, h3 {
+          color: #fff;
+      }
+    }
+    .header-grid-meta {
+        position: absolute;
+        bottom: 0;
+        padding: 15px;
+        width: 100%;
+        h3 {display: none;} // temp
+    }
+    #header-grid-blog {
+        background-color: rgba(52, 185, 95, 0.34);
+        background: url('/assets/img/section-header-blog.jpg') no-repeat scroll center center/cover;
+        .header-grid-meta {
+            background-color: #167407;
+        }
+    }
+    #header-grid-video {
+        background-color: rgba(218, 76, 64, 0.5);
+        background: url('/assets/img/section-header-video.jpg') no-repeat scroll center center/cover;
+        .header-grid-meta {
+            background-color: #bb3f3f;
+        }
+    }
+    #header-grid-mywork {
+        background-color: rgba(14, 41, 48, 0.8);
+        .header-grid-meta {
+            background-color: #050f12;
+        }
+    }
+}
+#section-blog {
+    min-height: 100vh;
+}
