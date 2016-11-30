@@ -1,6 +1,9 @@
 <footer>
     <div class="container">
-        <h2>{{ site.title | escape }}</h2>
+        <div class="footer-info">
+            <h2>{{ site.title | escape }}</h2>
+            <p>{{ site.description | escape }}</p>
+        </div>
         <nav>
             <ul class="footer-social-media">
                 {% if site.twitter_username %}
@@ -13,8 +16,5 @@
                 </li>{% endif %}
             </ul>
         </nav>
-        <div class="footer-info">
-            <p>{{ site.description | escape }}</p>
-        </div>
     </div>
 </footer>

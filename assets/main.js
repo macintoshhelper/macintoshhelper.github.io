@@ -12,7 +12,9 @@ window.addEventListener("scroll", function() {
 window.addEventListener("resize", function() {
     navbarCheck();
 });
-
+document.addEventListener("DOMContentLoaded", function(event) {
+    navbarCheck();
+});
 
 // Functions
 //function navbarCheck() {
