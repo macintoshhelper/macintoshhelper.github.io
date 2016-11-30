@@ -105,6 +105,7 @@ body > header {
     background-color: white;
     border-bottom: solid 1px #dcdcdc;
     .site-title {
+        font-family: 'Droid Sans';
         font-size: 18px;
         font-weight: bold;
         padding: 41px;
@@ -113,6 +114,9 @@ body > header {
         text-decoration: none;
     }
     nav {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
         @media (max-width: 768px) {
             display: none;
             background-color: white;
@@ -122,7 +126,7 @@ body > header {
             text-align: center;
         }
     }
-    nav > ul {
+    nav ul {
         float: right;
         li {
             float: left;
@@ -151,16 +155,17 @@ body > header {
 }
 .cover-header {
     height: 50%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.25) 100%), url(https://macintoshhelper.com/img/Coverv1.0.jpg) no-repeat scroll center center/cover;
+    //background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.25) 100%), url(https://macintoshhelper.com/img/Coverv1.0.jpg) no-repeat scroll center center/cover;
+    background: #050f12;
     position: absolute;
     left: 0;
     right: 0;
-    .container {
+    /*.container {
         position: absolute;
         right: 0;
         left: 0;
         bottom: 0;
-    }
+    }*/
     li > a {
         color: #fff;
         font-weight: 300;
@@ -170,6 +175,47 @@ body > header {
     }
     .site-title {
         color: #fff;
+    }
+}
+
+header.scrolled {
+    .navbar {
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: inherit;
+        display: block;
+        z-index: 1;
+        height: 70px;
+        border-bottom: solid 1px #dcdcdc;
+    }
+
+    a, .site-title {
+        color: black;
+        padding: 26px 15px;
+        transition: color 1s;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+
+    .header-lead {
+        h1 {
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            color: black;
+            font-size: 24px;
+            padding: 23px;
+        }
+
+        strong {
+            border-bottom: none;
+        }
     }
 }
 #menu-icon {
@@ -220,22 +266,23 @@ body > main > section {
 }
 
 .header-lead {
+    position: absolute;
+    width: 100%;
     text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
     h1 {
         font-size: 64px;
+        border-bottom: solid 4px white;
+        display: inline-block;
     }
     h3 {
         margin-top: 30px;
         font-size: 28px;
+        margin-left: -300px;
     }
     h1, h3 {
         color: white;
-    }
-    h1 strong {
-        border-bottom: solid 4px white;
-        display: inline-block;
-        padding-bottom: 15px;
-        margin-bottom: -15px;
     }
 }
 
@@ -248,16 +295,16 @@ main.cover-main {
     height: 50vh;
     padding: 0px;
     .header-grid {
-      width: 33.333333%;
-      height: 40vh;
-      float: left;
-      display: inline-block;
-      margin-top: 10vh;
-      position: relative;
-      h2, h3 {
-          color: #fff;
-      }
-    }
+        width: 33.333333%;
+        height: calc(50vh - 140px);
+        display: inline-block;
+        margin-top: 70px;
+        position: relative;
+        float: left;
+          h2, h3 {
+              color: #fff;
+          }
+        }
     .header-grid-meta {
         position: absolute;
         bottom: 0;
@@ -288,4 +335,6 @@ main.cover-main {
 }
 #section-blog {
     min-height: 100vh;
+    background: rgb(54, 54, 54);
+    color: white;
 }

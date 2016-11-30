@@ -3,39 +3,40 @@
     {% for my_page in site.pages %} {% if my_page.title %}
     <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a> {% endif %} {% endfor %} {% endcomment %}
 <header id="site-header"{% if page.layout == 'home' %} class="cover-header"{% endif %}>
-    <div class="container">
-        {% if page.layout == 'home' %}
-        <div class="header-lead">
+    {% if page.layout == 'home' %}
+    <div class="header-lead">
+        <div class="container">
             <h1><strong>MACINTOSH</strong> HELPER</h1>
             <span class="header-line"></span>
             <h3>My blog, videos and work</h3>
         </div>
-        {% endif %}
-        <a class="site-title" href="{{ " / " | relative_url}}">MACINTOSH HELPER</a>
-        <nav class="navbar">
+    </div>
+    {% endif %}
+    <nav class="navbar">
+        <div class="container">
+            <a class="site-title" href="{{ " / " | relative_url}}">MACINTOSH HELPER</a>
             <ul>
                 <li>
                     <a href="#site-header">HOME</a>
                 </li>
                 <li>
-                    <a href="#blog">BLOG</a>
+                    <a href="#section-blog">BLOG</a>
                 </li>
                 <li>
-                    <a href="#youtube">YOUTUBE</a>
+                    <a href="#section-youtube">VIDEOS</a>
                 </li>
                 <li>
-                    <a href="#mywork">MY WORK</a>
+                    <a href="#section-work">MY WORK</a>
                 </li>
                 <li>
-                    <a href="#about">ABOUT</a>
+                    <a href="#section-about">ABOUT</a>
                 </li>
                 <li>
-                    <a href="#contact">CONTACT</a>
+                    <a href="#section-contact">CONTACT</a>
                 </li>
             </ul>
-
-        </nav>
-    </div>
+        </div>
+    </nav>
     <button id="menu-icon">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
