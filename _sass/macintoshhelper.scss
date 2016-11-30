@@ -522,6 +522,10 @@ section:nth-child(even) {
     }
     table {
         margin-top: 20px;
+        a {
+            color: #2295b7;
+            text-transform: none;
+        }
     }
 }
 
