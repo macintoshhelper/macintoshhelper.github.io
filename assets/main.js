@@ -6,6 +6,29 @@ document.getElementById("menu-icon").addEventListener("click", function(){
         item.classList.add('nav-toggle');
     }
 });
+
+function addClassNameListener(elemId, callback) {
+    var elem = document.getElementById(elemId);
+    var lastClassName = elem.className;
+    window.setInterval( function() {
+       var className = elem.className;
+        if (className !== lastClassName) {
+            callback();
+            lastClassName = className;
+        }
+    },10);
+}
+addClassNameListener('navbarMain', function() {
+    var navToggleButton = document.querySelectorAll('.nav-toggle li > a');
+    for (var i = 0; i < navToggleButton.length; i++) {
+        navToggleButton[i].addEventListener("click", function(){
+            document.querySelectorAll('.nav-toggle')[0].classList.remove('nav-toggle');
+        });
+    }
+});
+
+
+
 window.addEventListener("scroll", function() {
     navbarCheck();
 });
@@ -14,6 +37,9 @@ window.addEventListener("resize", function() {
 });
 document.addEventListener("DOMContentLoaded", function(event) {
     navbarCheck();
+    var event = document.createEvent('HTMLEvents');
+    event.initEvent('scroll', true, false);
+    document.dispatchEvent(event);
 });
 
 // Functions

@@ -141,6 +141,9 @@ body > header {
             width: 100%;
             position: absolute;
             text-align: center;
+            .container {
+                display: none;
+            }
         }
     }
     nav ul {
@@ -237,10 +240,11 @@ header.scrolled {
 }
 #menu-icon {
     display: none;
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     right: 5%;
     top: 0;
-    background: white;
+    background: transparent;
     border: none;
     margin: 15px;
     @media (max-width: 768px) {
@@ -252,6 +256,11 @@ header.scrolled {
 }
 .nav-toggle {
     display: block !important;
+    .container {
+        display: block !important;
+    }
+    height: 100% !important;
+    background: white;
 }
 #menu-icon .icon-bar {
     background: none repeat scroll 0% 0% #000;
@@ -296,7 +305,7 @@ body > main > section {
     h3 {
         margin-top: 30px;
         font-size: 28px;
-        margin-left: -300px;
+        // margin-left: -300px;
     }
     h1, h3 {
         color: white;
@@ -359,7 +368,7 @@ section {
         display: flex;
         margin-top: 75px;
         height: 300px;
-        @media (max-width: 544px) {
+        @media (max-width: 768px) {
             flex-wrap: wrap;
             .blog-box {
                 margin: 20px !important;
@@ -401,6 +410,13 @@ section:nth-child(even) {
 #section-video {
     .video-container {
         display: flex;
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+            .video-box {
+                flex: 0 1 auto;
+                width: 100%;
+            }
+        }
     }
     .video-box {
         flex: 1;
@@ -468,7 +484,9 @@ section:nth-child(even) {
         display: flex;
         margin-top: 75px;
         min-height: 300px;
-        @media (max-width: 544px) {
+        margin-left: -20px;
+        margin-right: -20px;
+        @media (max-width: 768px) {
             flex-wrap: wrap;
             .work-box {
                 margin: 20px !important;
